@@ -45,10 +45,12 @@ namespace Calculator.WindowsFormsApp
             }
 
             tbScreen.Text += clickedValue;
-
+            SetResultBtnState(true);
 
             if (_currentOperation != Operation.None)
                 _secondValue += clickedValue;
+            else
+                SetOperationBtnState(true);
         }
 
         private void OnButtonOperationClick(object sender, EventArgs e)
@@ -68,10 +70,19 @@ namespace Calculator.WindowsFormsApp
             };
 
             tbScreen.Text += $" {clickedOperation} ";
+
+            if (_isTheResultOnTheScreen)
+                _isTheResultOnTheScreen = false;
+
+            SetOperationBtnState(false);
+            SetResultBtnState(false);
         }
 
         private void OnButtonResultClick(object sender, EventArgs e)
         {
+            if (_currentOperation == Operation.None)
+                return;
+
             var firstNumber = double.Parse(_firstValue);
             var secondNumber = double.Parse(_secondValue);
 
@@ -79,6 +90,7 @@ namespace Calculator.WindowsFormsApp
 
             tbScreen.Text = result.ToString();
             _isTheResultOnTheScreen = true;
+            SetOperationBtnState(true);
 
             _secondValue = String.Empty;
             _currentOperation = Operation.None;
@@ -116,6 +128,8 @@ namespace Calculator.WindowsFormsApp
             _firstValue = String.Empty;
             _secondValue = String.Empty;
             _currentOperation = Operation.None;
+            SetOperationBtnState(true);
+            SetResultBtnState(true);
         }
 
         private void OnButtonNegativeClick(object sender, EventArgs e)
@@ -126,6 +140,20 @@ namespace Calculator.WindowsFormsApp
         private void OnButtonDeleteClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void SetOperationBtnState(bool value)
+        {
+            btnAdd.Enabled = value;
+            btnDivision.Enabled = value;
+            btnMultiplication.Enabled = value;
+            btnSubstraction.Enabled = value;
+            btnModulo.Enabled = value;
+        }
+
+        private void SetResultBtnState(bool value)
+        {
+            btnResult.Enabled = value;
         }
 
     }
