@@ -412,26 +412,29 @@
         #endregion
 
         private TextBox tbScreen;
-        private Button btnClear;
-        private Button btnModulo;
-        private Button btnNegative;
-        private Button btnDelete;
-        private Button btn7;
-        private Button btn8;
-        private Button btn9;
-        private Button btn4;
-        private Button btn5;
-        private Button btn6;
+        private Label brandName;
+
+        private Button btn0;
         private Button btn1;
         private Button btn2;
         private Button btn3;
+        private Button btn4;
+        private Button btn5;
+        private Button btn6;
+        private Button btn7;
+        private Button btn8;
+        private Button btn9;
+
+        private Button btnAdd;
         private Button btnDivision;
         private Button btnMultiplication;
         private Button btnSubstraction;
-        private Button btn0;
+        private Button btnModulo;
+
+        private Button btnClear;
+        private Button btnNegative;
+        private Button btnDelete;
         private Button btnComma;
-        private Button btnAdd;
         private Button btnResult;
-        private Label brandName;
     }
 }

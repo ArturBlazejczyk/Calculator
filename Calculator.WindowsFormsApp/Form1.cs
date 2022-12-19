@@ -55,22 +55,19 @@ namespace Calculator.WindowsFormsApp
         {
             _firstValue = tbScreen.Text;
 
-            if (_currentOperation == Operation.None)
+            var clickedOperation = (sender as Button).Text;
+
+            _currentOperation = clickedOperation switch
             {
-                var clickedOperation = (sender as Button).Text;
+                "+" => Operation.Addition,
+                "-" => Operation.Subtraction,
+                "x" => Operation.Multiplication,
+                "/" => Operation.Division,
+                "%" => Operation.Modulus,
+                _ => Operation.None,
+            };
 
-                _currentOperation = clickedOperation switch
-                {
-                    "+" => Operation.Addition,
-                    "-" => Operation.Subtraction,
-                    "x" => Operation.Multiplication,
-                    "/" => Operation.Division,
-                    "%" => Operation.Modulus,
-                    _ => Operation.None,
-                };
-
-                tbScreen.Text += $" {clickedOperation} ";
-            }
+            tbScreen.Text += $" {clickedOperation} ";
         }
 
         private void OnButtonResultClick(object sender, EventArgs e)
@@ -130,5 +127,6 @@ namespace Calculator.WindowsFormsApp
         {
 
         }
+
     }
 }
