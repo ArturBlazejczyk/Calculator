@@ -30,13 +30,18 @@ namespace Calculator.WindowsFormsApp
         {
             var clickedValue = (sender as Button).Text;
 
-            if (tbScreen.Text == "0")
+            if (tbScreen.Text == "0" && clickedValue != ",")
                 tbScreen.Text = String.Empty;
 
             if (_isTheResultOnTheScreen)
             {
                 _isTheResultOnTheScreen = false;
                 tbScreen.Text = String.Empty;
+
+                if (clickedValue == ",")
+                {
+                    clickedValue = "0,";
+                }
             }
 
             tbScreen.Text += clickedValue;
@@ -119,11 +124,6 @@ namespace Calculator.WindowsFormsApp
         }
 
         private void OnButtonDeleteClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void OnButtonCommaClick(object sender, EventArgs e)
         {
 
         }

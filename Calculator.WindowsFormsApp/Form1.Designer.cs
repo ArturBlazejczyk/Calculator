@@ -328,9 +328,9 @@
             this.btnComma.Name = "btnComma";
             this.btnComma.Size = new System.Drawing.Size(88, 88);
             this.btnComma.TabIndex = 32;
-            this.btnComma.Text = ".";
+            this.btnComma.Text = ",";
             this.btnComma.UseVisualStyleBackColor = false;
-            this.btnComma.Click += new System.EventHandler(this.OnButtonCommaClick);
+            this.btnComma.Click += new System.EventHandler(this.OnButtonNumberClick);
             // 
             // btnAdd
             // 
