@@ -14,13 +14,14 @@ namespace Calculator.WindowsFormsApp
         private string _firstValue;
         private string _secondValue;
         private Operation _currentOperation = Operation.None;
+        private bool _isTheResultOnTheScreen = false;
 
         public Form1()
         {
             InitializeComponent();
             tbScreen.Text = "0";
         }
-    
+
         private void Form1_Load(object sender, System.EventArgs e)
         {
         }
@@ -32,7 +33,14 @@ namespace Calculator.WindowsFormsApp
             if (tbScreen.Text == "0")
                 tbScreen.Text = String.Empty;
 
+            if (_isTheResultOnTheScreen)
+            {
+                _isTheResultOnTheScreen = false;
+                tbScreen.Text = String.Empty;
+            }
+
             tbScreen.Text += clickedValue;
+
 
             if (_currentOperation != Operation.None)
                 _secondValue += clickedValue;
@@ -65,12 +73,14 @@ namespace Calculator.WindowsFormsApp
             var result = Calculate(firstNumber, secondNumber);
 
             tbScreen.Text = result.ToString();
+            _isTheResultOnTheScreen = true;
+
             _secondValue = String.Empty;
             _currentOperation = Operation.None;
 
         }
 
-        private double Calculate (double firstNumber, double secondNumber)
+        private double Calculate(double firstNumber, double secondNumber)
         {
             switch (_currentOperation)
             {
@@ -97,7 +107,6 @@ namespace Calculator.WindowsFormsApp
 
         private void OnButtonClearClick(object sender, EventArgs e)
         {
-
         }
 
         private void OnButtonNegativeClick(object sender, EventArgs e)
