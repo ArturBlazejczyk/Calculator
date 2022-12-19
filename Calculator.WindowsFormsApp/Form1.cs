@@ -107,6 +107,10 @@ namespace Calculator.WindowsFormsApp
 
         private void OnButtonClearClick(object sender, EventArgs e)
         {
+            tbScreen.Text = "0";
+            _firstValue = String.Empty;
+            _secondValue = String.Empty;
+            _currentOperation = Operation.None;
         }
 
         private void OnButtonNegativeClick(object sender, EventArgs e)
