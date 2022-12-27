@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.ConsoleApp", "Calculator.ConsoleApp\Calculator.ConsoleApp.csproj", "{F931BA61-EE0B-425A-B70F-104CE21F4462}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.WindowsFormsApp", "Calculator.WindowsFormsApp\Calculator.WindowsFormsApp.csproj", "{344F304B-523C-449A-A009-BF1685BFA4AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.WindowsFormsApp", "Calculator.WindowsFormsApp\Calculator.WindowsFormsApp.csproj", "{344F304B-523C-449A-A009-BF1685BFA4AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.WpfApp", "Calculator.WpfApp\Calculator.WpfApp.csproj", "{7EE3B4F5-D796-4144-848B-232F91C4C14D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{344F304B-523C-449A-A009-BF1685BFA4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{344F304B-523C-449A-A009-BF1685BFA4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{344F304B-523C-449A-A009-BF1685BFA4AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE3B4F5-D796-4144-848B-232F91C4C14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE3B4F5-D796-4144-848B-232F91C4C14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE3B4F5-D796-4144-848B-232F91C4C14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE3B4F5-D796-4144-848B-232F91C4C14D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
