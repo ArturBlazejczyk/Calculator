@@ -15,13 +15,16 @@ namespace Calculator.WpfApp.ViewModels
     {
         public MainViewModel() 
         {
-            ScreenVal = "0";
+            ScreenVal = "1";
             AddNumberCommand = new RelayCommand(AddNumber);
         }
 
         private void AddNumber(object obj)
         {
-            MessageBox.Show("Test");
+            if (ScreenVal == "0")
+                ScreenVal = (string)obj;
+            else
+                ScreenVal += obj;
         }
 
         private string _screenVal;
