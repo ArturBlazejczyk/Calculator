@@ -15,7 +15,7 @@ namespace Calculator.WpfApp.ViewModels
     {
         public MainViewModel() 
         {
-            ScreenVal = "0";
+            ScreenVal = "1";
             AddNumberCommand = new RelayCommand(AddNumber);
             AddOperationCommand = new RelayCommand(AddOperation);
         }
