@@ -17,16 +17,28 @@ namespace Calculator.WpfApp.ViewModels
         {
             ScreenVal = "0";
             AddNumberCommand = new RelayCommand(AddNumber);
+            AddOperationCommand = new RelayCommand(AddOperation);
+        }
+
+        private void AddOperation(object obj)
+        {
+            ScreenVal += obj;
         }
 
         private void AddNumber(object obj)
         {
-            MessageBox.Show("Test");
+            if (ScreenVal == "0")
+                ScreenVal = (string)obj;
+            else
+                ScreenVal += obj;
         }
 
         private string _screenVal;
 
         public ICommand AddNumberCommand { get; set; }
+        public ICommand AddOperationCommand { get; set; }
+
+
 
         public string ScreenVal
         {
