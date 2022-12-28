@@ -10,6 +10,23 @@ namespace Calculator.WpfApp.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        public MainViewModel() 
+        {
+            ScreenVal = "0";
+        }
+
+        private string _screenVal;
+
+        public string ScreenVal
+        {
+            get { return _screenVal; }
+            set 
+            { 
+                _screenVal = value; 
+                OnPropertyChanged();
+            }
+        }
+
 
 
         public event PropertyChangedEventHandler
