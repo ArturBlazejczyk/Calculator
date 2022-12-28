@@ -10,6 +10,8 @@ namespace Calculator.WpfApp.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+
+
         public event PropertyChangedEventHandler
             PropertyChanged;
 
